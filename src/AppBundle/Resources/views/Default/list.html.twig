@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table>
+        <tr>
+            <td>
+                Title
+            </td>
+            <td>
+                Date
+            </td>
+            <td>
+                Author
+            </td>
+            <td>
+            </td>
+        </tr>
+        {% for entity in entities %}
+            <tr>
+                <td>
+                    {{ entity.title }}
+                </td>
+                <td>
+                    {{ entity.date|date('Y') }}
+                </td>
+                <td>
+                    {{ entity.author.fullName }}
+                </td>
+                <td>
+                    <a href="{{ path('book_edit', {'id': entity.id}) }}">Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ path('book_add') }}">Add</a>
+{% endblock %}

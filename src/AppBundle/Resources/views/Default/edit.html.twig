@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <form action="{{ path('book_edit') }}" method="POST" id="book_form">
+        {{ form_row(form.title) }}
+        {{ form_row(form.date) }}
+        {{ form_row(form.author) }}
+        <input type="submit" value="Send" class="symfony-button-grey" />
+    </form>
+{% endblock %}

@@ -1,0 +1,7 @@
+services:
+    repository.book:
+        class: AppBundle\Entity\Repository\BookRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_menthod: getRepository
+        arguments:
+            - AbbBundle\Entity\Book
